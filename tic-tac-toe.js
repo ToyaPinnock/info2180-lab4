@@ -1,20 +1,30 @@
 
 
 window.onload = function() {
-document.getElementsByClassName('btn')[0].addEventListener('click', reset);
+    document.getElementsByClassName('btn')[0].addEventListener('click', reset);
+    start();
+}
 function reset(){
-document.getElementById('status').classList.remove('you-won');
-document.getElementById('status').innerHTML = 'Move your mouse over a square and click to play an X or an O.';
+    document.getElementById('status').classList.remove('you-won');
+    document.getElementById('status').innerHTML = 'Move your mouse over a square and click to play an X or an O.';
+    var div =document.getElementById("board").getElementsByTagName("div")
+    for (var i = 0; i < div.length; i++) {
+        div[i].innerHTML=" "; 
+    }
+    // location.reload(true)
 
-}    
-    var squares = document.getElementById("board");
-    var divs = squares.getElementsByTagName("div");
+}
+
+
+
+function start(){
+var squares = document.getElementById("board");
+var divs = squares.getElementsByTagName("div");
     for (var i = 0; i < divs.length; i++) {
         divs[i].classList.add("square");
         
     }
-    
-    
+
 var squares1 = document.getElementById("board").getElementsByClassName('square');
 //var  track=Array.from(Array(9).keys());
 var x=true;
@@ -40,17 +50,22 @@ var x=true;
                 this.innerHTML="X";
                 this.classList.add("X");
                 x=false;
-                checking("X");
+               checking("X");
 
             }else if (x==false) {
                 this.innerHTML="O";
                 this.classList.add("O");
                 x =true;
-                checking("O");
+                checking ("O");
             }
         }
     }
 }
+
+}
+
+
+
 function checking(value) {
   var squares2 = document.getElementById("board").getElementsByClassName('square');
   
@@ -73,7 +88,7 @@ function checking(value) {
     for (var k=0; k<wins[i].length; k++) {
       if (wins[i][k].innerText == value) {
         count += 1;
-        console.log('count = '+count);
+        //console.log('count = '+count);
       }
     }
 
@@ -86,34 +101,53 @@ function checking(value) {
       break;
     }
   }
+  
 
 }
+
+
+
+
+
 
 /*
 var squares2 = document.getElementById("board").getElementsByClassName('square');
         var i= 0;
+        var arrX= [];
+        var arrO= [];
+        
         for (var m = 0; m < squares2.length; m++){
             squares2[m].id=i;
             
             i++;
         
         squares2[m].addEventListener("click",turnclick);
+        
         function turnclick(){
-            var x= " ";
             if (this.innerHTML=="X") {
-                checking(this.id);
-                
-                
-                
-            }
-            if (this.innerHTML=="O") {
-               checking(this.id);
+                arrX.push(this.id);
+                //console.log(arrX);
+                   
                 
             }
             
+            if (this.innerHTML=="O") {
+                arrO.push(this.id);
+                //console.log(arrO);
+                  
+            }
+         checking(arrX, arrO);
+        //console.log(arrX, arrO);
+            //console.log(arrO);
+        
+            
     }
-        }
-function checking(value){  
+  
+}
+
+
+
+function checking(valueX, valueO){  
 //console.log(value);
 var wincombos=[
         [0,1,2],
@@ -125,24 +159,23 @@ var wincombos=[
         [0,4,8],
         [6,4,2]
     ]
-var count=0;
-for (var t = 0; t< wincombos.length; t++) {
-    //console.log(wincombos[t]);
-    for (var l = 0; l < wincombos[l].length; l++){
-        if (wincombos[t][l]== value){
-            //console.log(wincombos[t][l]);
-            count+= 1;
-            console.log('count=' +count);
-        }
+//var count=0;
+for (var t = 0; t< wincombos.length; t++) { 
+    if (wincombos[t]== valueX ){
+        cl
+
+    } else if (wincombos[t]==valueO){
+
+    
 
     }
-   
+} 
 
-}      
-}        
+ 
 */
 
 
+ 
 
 
 
@@ -150,19 +183,6 @@ for (var t = 0; t< wincombos.length; t++) {
 
 
 
+     
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
