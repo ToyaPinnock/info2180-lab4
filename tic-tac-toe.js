@@ -85,7 +85,7 @@ function checking(value) {
         for (var k = 0; k < wins[i].length; k++) {
             if (wins[i][k].innerText == value) {
                 count += 1;
-                //console.log('count = ' + count);
+
             }
         }
         if (count < 3) {
@@ -95,12 +95,12 @@ function checking(value) {
         if (count == 3) {
             document.getElementById('status').innerHTML = 'Congratulations! ' + value + ' is the Winner!';
             document.getElementById('status').classList.add('you-won');
-            //stop();
+
             break;
 
 
         }
-        //stop();
+
 
 
     }
@@ -146,79 +146,9 @@ function reset() {
     var div = document.getElementById("board").getElementsByTagName("div")
     for (var i = 0; i < div.length; i++) {
         div[i].innerHTML = "";
-        //console.log(i)
-
-    }
-    // location.reload(true)
-
-}
-
-
-
-
-
-
-
-/*
-var squares2 = document.getElementById("board").getElementsByClassName('square');
-        var i= 0;
-        var arrX= [];
-        var arrO= [];
-
-        for (var m = 0; m < squares2.length; m++){
-            squares2[m].id=i;
-
-            i++;
-
-        squares2[m].addEventListener("click",turnclick);
-
-        function turnclick(){
-            if (this.innerHTML=="X") {
-                arrX.push(this.id);
-                //console.log(arrX);
-
-
-            }
-
-            if (this.innerHTML=="O") {
-                arrO.push(this.id);
-                //console.log(arrO);
-
-            }
-         checking(arrX, arrO);
-        //console.log(arrX, arrO);
-            //console.log(arrO);
 
 
     }
 
+
 }
-
-
-
-function checking(valueX, valueO){
-//console.log(value);
-var wincombos=[
-        [0,1,2],
-        [3,4,5],
-        [6,7,8],
-        [0,3,6],
-        [1,4,7],
-        [2,5,8],
-        [0,4,8],
-        [6,4,2]
-    ]
-//var count=0;
-for (var t = 0; t< wincombos.length; t++) {
-    if (wincombos[t]== valueX ){
-        cl
-
-    } else if (wincombos[t]==valueO){
-
-
-
-    }
-}
-
-
-*/
