@@ -122,7 +122,7 @@ function stop() {
             divs[i].innerHTML = "";
 
         }
-        start();
+
 
 
     }
@@ -135,7 +135,7 @@ function stop() {
             divs[i].innerHTML = "";
 
         }
-        start();
+
 
     }
 }
